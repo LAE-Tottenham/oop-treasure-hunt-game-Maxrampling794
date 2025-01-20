@@ -24,12 +24,12 @@ class dice:
 
 
 class Place():
-    def __init__(self, given_name, total = 0, got_item = False):
+    def __init__(self, given_name, total = 0, num_dice = 0 ,got_item = False):
         # locked=False means that the locked parameter will be False by default if not provided.
         self.location_name = given_name
         self.items = []
         self.got_item = got_item
-        self.num_dice = 0
+        self.num_dice = num_dice
         self.total = total
     
     def roll(self,new_turn):
@@ -55,50 +55,50 @@ class Place():
             print ("generating card...")
             time.sleep(3)
             num = random.randint(1,10)
-            if num == "1":
+            if num == 1:
                 print ("bad luck")
                 print ("you fell of a cliff and lost 20 health")
                 self.health -= 20 
                 time.sleep(3)
-            elif num == "2":
+            elif num == 2:
                 print ("bad luck")
                 print ("rats ate your food")
-                if "food" in self.inventory:
-                    self.inventory.append("food")
+                if "food" in self.inventory.player:
+                    self.inventory.player.append("food")
                 time.sleep(3)
-            elif num == "3":
+            elif num == 3:
                 print ("bad luck")
                 print ("you ran away from a spider, and lost energy")
                 self.hunger -= 20
                 time.sleep(3)
-            elif num == "4":
+            elif num == 4:
                 print ("bad luck")
                 print ("you fell into a pit and encounterd trivia master...")
                 self.playing_trivia = True 
                 time.sleep(3)
-            elif num == "5":
+            elif num == 5:
                 print ("bad luck")
                 print ("you fell into a pit and encounterd trivia master...")
                 self.playing_trivia = True 
                 time.sleep(3)
-            elif num == "6":
+            elif num == 6:
                 print ("good luck")
                 print ("you found food")
                 self.item_instance = "food"
                 self.got_item = True
                 time.sleep(3)
-            elif num == "7":
+            elif num == 7:
                 print ("good luck")
                 print ("you found medicine")
                 self.item_instance = "medicine"
                 self.got_item = True
                 time.sleep(3)
-            elif num == "8":
+            elif num == 8:
                 print ("good luck")
                 print ("move forward 2 spaces")
                 self.total += 2
                 time.sleep(3)
-            elif num == "9":
+            elif num == 9:
                 print ("good luck")
                 print ("you got a clue")
                 self.item_instance = "clue"
@@ -106,7 +106,7 @@ class Place():
                 time.sleep(3)
             else:
                 print ("good luck")
-                ("move forward 3 spaces")
+                print ("move forward 3 spaces")
                 self.total += 3
                 time.sleep(3)
     

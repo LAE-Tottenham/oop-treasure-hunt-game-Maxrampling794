@@ -8,7 +8,7 @@ from time import sleep
 
 class Game(Place, Player):
     def __init__(self):
-        self.total = 0
+        self.total = 0 
         self.got_item = False
         self.play = "play" 
         self.new_turn = False
@@ -38,7 +38,6 @@ class Game(Place, Player):
             sleep(0.05)
         print(txt) 
         time.sleep(3)
-        self.got_item = False
         timer = stopwatch("yes")
         timer.start_time()
         island = Place("island",0)
@@ -47,7 +46,7 @@ class Game(Place, Player):
         print(f.renderText('welcome to the island...'))
         print (f)
        
-        while self.total < 10:
+        while (self.total < 10) and (self.total >= 0):
             self.new_turn = True
             island.roll(self.new_turn)
             self.new_turn = False
@@ -78,11 +77,11 @@ class Game(Place, Player):
 
             
         volcano = Place("volcano")
-        f = Figlet(font='larry 3d')
+        f = Figlet(font='larry3d')
         print(f.renderText('welcome to the volcano'))
         print (f)
 
-        while (self.total.palce < 20):
+        while (self.total < 20) and (self.total> 10):
             self.new_turn = True
             volcano.rol()
             volcano.wildcard()
@@ -114,11 +113,11 @@ class Game(Place, Player):
 
             
         sea = Place("sea")
-        f = Figlet(font='larry 3d')
+        f = Figlet(font='larry3d')
         print(f.renderText('welcome to the sea'))
         print (f)
 
-        while (self.total < 30):
+        while (self.total < 30)and (self.total > 20):
             self.new_turn = True
             sea.roll()
             sea.wildcard()
@@ -145,11 +144,11 @@ class Game(Place, Player):
             sea.trivia()
             
         desert = Place("desert")  
-        f = Figlet(font='larry 3d')
+        f = Figlet(font='larry3d')
         print(f.renderText('welcome to the desert'))
         print (f)
     
-        while (self.total < 40):
+        while (self.total < 40)and (self.total > 30):
             self.new_turn = True
             desert.roll()
             desert.wildcard()
@@ -178,11 +177,11 @@ class Game(Place, Player):
             
             
         forest = Place("forest")
-        f = Figlet(font='larry 3d')
+        f = Figlet(font='larry3d')
         print(f.renderText('welcome to the forest'))
         print (f)
 
-        while (self.total < 50):
+        while (self.total < 50)and (self.total > 40):
             self.new_turn = True
             forest.roll()
             forest.wildcard()
@@ -208,11 +207,11 @@ class Game(Place, Player):
 
             
         town = Place("town")   
-        f = Figlet(font='larry 3d')
+        f = Figlet(font='larry3d')
         print(f.renderText('welcome to the town'))
         print (f)
 
-        while (self.total < 60):
+        while (self.total < 60)and (self.total > 50):
             self.new_turn = True
             town.roll()
             town.wildcard()
@@ -238,11 +237,11 @@ class Game(Place, Player):
             
             
         snowy_reigon = Place("snowy_reigon")    
-        f = Figlet(font='larry 3d')
+        f = Figlet(font='larry3d')
         print(f.renderText('welcome to the snowy reigon'))
         print (f)
 
-        while self.total <= 70:
+        while (self.total < 70) and (self.total > 60):
             self.new_turn = True
             snowy_reigon.roll()
             snowy_reigon.wildcard()
@@ -267,11 +266,11 @@ class Game(Place, Player):
             snowy_reigon.trivia()
                 
         city = Place("city")
-        f = Figlet(font='larry 3d')
+        f = Figlet(font='larry3d')
         print(f.renderText('welcome to the city'))
         print (f)
 
-        while self.total <= 80:
+        while (self.total < 80) and (self.total > 70):
             self.new_turn = True
             city.roll()
             city.wildcard()
@@ -296,15 +295,13 @@ class Game(Place, Player):
             city.trivia()
         
 
-        show_message = True 
-        while self.total > 80:
-            while show_message == True:    
-                print (" WELL DONE, for finihing the board game...")
-                print ("but did you collect the 3 missing treasure peices?")
-                timer.stop_time()
-                timer.show_time()
-                show_message = False 
-            
+        print (" WELL DONE, for finihing the board game...")
+        print ("but did you collect the 3 missing treasure peices?")
+        timer.stop_time()
+        timer.show_time()
+        
+
+
 
 new_game = Game()
 new_game.start()

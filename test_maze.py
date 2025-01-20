@@ -1,10 +1,8 @@
 import os
 os.environ['SDL_AUDIODRIVER'] = 'dsp' 
-from os import environ
-environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
-RES = WIDTH, HEIGHT = 1500, 1500
+RES = WIDTH , HEIGHT = 1500,1500
 
 # game window 
 pygame.init()
